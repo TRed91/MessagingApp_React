@@ -7,6 +7,7 @@ function Signup({ setMainContent }) {
     const [ email, setEmail ] = useState("");
     const [ password, setPassword ] = useState("");
     const [ cpw, setCpw ] = useState("");
+    const [ errMessages, setErrMessages ] = useState([]);
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -22,7 +23,11 @@ function Signup({ setMainContent }) {
         })
             .then(res => res.json())
             .then(data => {
-                setMainContent(<Login setMainContent={setMainContent} />);
+                if (data.ok) {
+                    setMainContent(<Login setMainContent={setMainContent} />);
+                } else {
+                    setErrMessages(data.message);
+                }
             })
             .catch(err => console.log(err));
     }
@@ -66,6 +71,9 @@ function Signup({ setMainContent }) {
                     Login here
                 </a>!
             </p>
+            {Array.isArray(errMessages) ? errMessages.map((m, i) => {
+                return <p key={i} className={styles.errMsg}>{m}</p>
+            }) : <p className={styles.errMsg}>{errMessages}</p>}
         </div>
     )
 }

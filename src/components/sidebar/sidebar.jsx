@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
-import MessageCard from '../messageCard/messageCard';
 import styles from './sidebar.module.css'
+import RecentMessages from "./sidebarPartials/recentMessages.jsx";
+import UserSelect from "./sidebarPartials/userSelect.jsx";
 
 function Sidebar({ user }) {
     const [ selection, setSelection ] = useState('recent');
@@ -12,7 +13,6 @@ function Sidebar({ user }) {
             .then(res => res.json())
             .then(data => {
                 if (data.ok) {
-                    console.log(data)
                     setMessages(data.data);
                 }
             })
@@ -23,14 +23,16 @@ function Sidebar({ user }) {
     return (
         <div className={styles.sidebarContainer}>
             <ul className={styles.header}>
-                <li className={selection === 'recent' ? styles.selected : undefined}><a>Recent</a></li>
-                <li className={selection === 'chats' ? styles.selected : undefined}><a>Chats</a></li>
+                <li className={selection === 'recent' ? styles.selected : undefined}>
+                    <a onClick={() => setSelection('recent')}>Recent</a>
+                </li>
+                <li className={selection === 'chats' ? styles.selected : undefined}>
+                    <a onClick={() => setSelection('chats')}>Chats</a>
+                </li>
             </ul>
-            <div className={styles.cardContainer}>
-                {messages.map(m => {
-                    return <MessageCard message={m} key={m.messageId} />
-                })}
-            </div>
+            {selection === 'recent' ?
+                <RecentMessages messages={messages} /> :
+                <UserSelect user={user}/>}
         </div>
     )
 }

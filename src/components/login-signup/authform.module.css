@@ -1,12 +1,13 @@
 .form {
     display: flex;
     flex-direction: column;
+    align-items: center;
     gap: 1rem;
 }
 
 .formcontainer {
     display: flex;
-    gap: 1rem;
+    gap: 2rem;
 }
 
 .formsection {
@@ -32,4 +33,9 @@ input {
 
 a:hover {
     cursor: pointer;
+}
+
+.errMsg {
+    color: red;
+    font-weight: bold;
 }

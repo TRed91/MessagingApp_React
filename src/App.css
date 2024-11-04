@@ -11,6 +11,8 @@ main {
   display: grid;
   grid-template-columns: 3fr 2fr 2fr;
   grid-template-rows: 1fr 1fr 1fr 1fr;
+
+  max-height: 100vh;
 }
 
 ul, li, p, h1, h2, h3, h4, h5, h6 {

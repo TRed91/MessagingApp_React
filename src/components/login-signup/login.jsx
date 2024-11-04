@@ -5,6 +5,7 @@ import Signup from "./signup.jsx";
 function Login({setMainContent}) {
     const [ username , setUsername ] = useState("");
     const [ password, setPassword ] = useState("");
+    const [ errMsg, setErrMsg ] = useState("");
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -21,6 +22,8 @@ function Login({setMainContent}) {
                 if (data.ok) {
                     localStorage.setItem('token', data.token);
                     window.location.reload();
+                } else {
+                    setErrMsg(data.message);
                 }
             })
             .catch(err => console.log(err));
@@ -46,6 +49,9 @@ function Login({setMainContent}) {
             <p>Or <a onClick={() => setMainContent(<Signup setMainContent={setMainContent}/>)}>
                     Sign Up here
                 </a>!
+            </p>
+            <p className={styles.errMsg}>
+                {errMsg}
             </p>
         </div>
     )
