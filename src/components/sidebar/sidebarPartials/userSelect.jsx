@@ -37,6 +37,7 @@ function UserSelect ({ user }) {
                 <button type='button' onClick={handleSearch}>Search</button>
             </div>
             {Array.isArray(messages) ? <RecentMessages messages={messages} /> : null}
+            <p className={errMsg}>{errMsg}</p>
         </>
     )
 }
