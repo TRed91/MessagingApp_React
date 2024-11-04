@@ -29,13 +29,13 @@ function Login({setMainContent}) {
     return (
         <div className={styles.form}>
             <form onSubmit={handleSubmit} className={styles.form}>
-                <div>
+                <div className={styles.formElement}>
                     <label htmlFor="username">Username</label>
                     <input type="text" id="username" name="username" placeholder="Username"
                            value={username}
                            onChange={(e) => setUsername(e.target.value)}/>
                 </div>
-                <div>
+                <div className={styles.formElement}>
                     <label htmlFor="password">Password</label>
                     <input type="password" id="password" name="password" placeholder="Password"
                            value={password}

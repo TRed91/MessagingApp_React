@@ -30,29 +30,35 @@ function Signup({ setMainContent }) {
     return (
         <div className={styles.form}>
             <form onSubmit={handleSubmit} className={styles.form} >
-                <div>
-                    <label htmlFor="username">Username</label>
-                    <input type="text" id="username" name="username" placeholder="Username"
-                           value={username}
-                           onChange={(e) => setUsername(e.target.value)}/>
-                </div>
-                <div>
-                    <label htmlFor="mail">E-Mail</label>
-                    <input type="email" id="email" name="email" placeholder="E-Mail"
-                           value={email}
-                           onChange={(e) => setEmail(e.target.value)}/>
-                </div>
-                <div>
-                    <label htmlFor="password">Password</label>
-                    <input type="password" id="password" name="password" placeholder="Password"
-                           value={password}
-                           onChange={(e) => setPassword(e.target.value)}/>
-                </div>
-                <div>
-                    <label htmlFor="cpw">Confirm Password</label>
-                    <input type="password" id="cpw" name="cpw" placeholder="Password"
-                           value={cpw}
-                           onChange={(e) => setCpw(e.target.value)}/>
+                <div className={styles.formcontainer}>
+                    <div className={styles.formsection}>
+                        <div className={styles.formElement}>
+                            <label htmlFor="username">Username</label>
+                            <input type="text" id="username" name="username" placeholder="Username"
+                                value={username}
+                                onChange={(e) => setUsername(e.target.value)}/>
+                        </div>
+                        <div className={styles.formElement}>
+                            <label htmlFor="mail">E-Mail</label>
+                            <input type="email" id="email" name="email" placeholder="E-Mail"
+                                value={email}
+                                onChange={(e) => setEmail(e.target.value)}/>
+                        </div>
+                    </div>
+                    <div className={styles.formsection}>
+                        <div className={styles.formElement}>
+                            <label htmlFor="password">Password</label>
+                            <input type="password" id="password" name="password" placeholder="Password"
+                                value={password}
+                                onChange={(e) => setPassword(e.target.value)}/>
+                        </div>
+                        <div className={styles.formElement}>
+                            <label htmlFor="cpw">Confirm Password</label>
+                            <input type="password" id="cpw" name="cpw" placeholder="Password"
+                                value={cpw}
+                                onChange={(e) => setCpw(e.target.value)}/>
+                        </div>
+                    </div>
                 </div>
                 <button>Sign Up</button>
             </form>

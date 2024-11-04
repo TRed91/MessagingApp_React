@@ -1,0 +1,44 @@
+.textarea {
+    background-color: white;
+    color: black;
+    font-size: 1rem;
+    border-radius: 5px;
+    padding: 0.8rem;
+    resize: none;
+
+    width: 100%;
+    height: 100%;
+}
+
+.formContainer {
+    height: 80%;
+    width: 80%;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    height: 100%;
+    gap: 1rem;
+}
+
+.formElement, .aboutElement {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+}
+
+.formElement {
+    flex: 1
+}
+
+.aboutElement {
+    flex: 2
+}
+
+input {
+    width: 100%;
+}

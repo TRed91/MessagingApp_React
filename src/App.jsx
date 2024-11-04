@@ -3,6 +3,7 @@ import {useEffect, useState} from "react";
 import Sidebar from "./components/sidebar/sidebar.jsx";
 import Header from "./components/header/header.jsx";
 import Login from "./components/login-signup/login.jsx";
+import MessageForm from './components/messageForm/messageForm.jsx';
 
 function App() {
   const [ user, setUser ] = useState(null);
@@ -21,6 +22,7 @@ function App() {
           .then(data => {
               if (data.ok){
                   setUser(data.data);
+                  setMainContent(<MessageForm user={data.data} />)
               }
               else {
                   setMainContent(<Login setMainContent={setMainContent} />);
@@ -34,14 +36,14 @@ function App() {
     <main>
         <div className={'sidebar'}>
             {user ?
-                <Sidebar /> :
+                <Sidebar user={user} /> :
                 <div className={'image-container'}></div>}
         </div>
-        <div className={'header'}><Header user={user}/></div>
+        <div className={'header'}><Header user={user} setMainContent={setMainContent}/></div>
         <div className={'main'}>
             {mainContent}
         </div>
-
+        
     </main>
   )
 }
