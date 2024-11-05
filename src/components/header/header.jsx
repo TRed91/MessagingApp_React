@@ -24,7 +24,7 @@ function Header({ user, setMainContent }) {
             {user && <ul className={styles.navlist}>
                 <li>
                     <a className={styles.navItem} onClick={handleNewMessage}>
-                        <img src="/public/message-square-medical-svgrepo-com.svg"
+                        <img src="/message-square-medical-svgrepo-com.svg"
                              height={30}
                              alt="add message"
                              className={styles.headerIcon}/>New Message
@@ -32,7 +32,7 @@ function Header({ user, setMainContent }) {
                 </li>
                 <li>
                     <a className={styles.navItem} onClick={handleProfile}>
-                        <img src="/public/profile-round-1342-svgrepo-com.svg"
+                        <img src="/profile-round-1342-svgrepo-com.svg"
                              alt="profile"
                              height={30}
                              className={styles.headerIcon}/>Profile

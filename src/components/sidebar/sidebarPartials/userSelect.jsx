@@ -10,7 +10,7 @@ function UserSelect ({ user }) {
 
     const handleSearch = () => {
         // eslint-disable-next-line react/prop-types
-        fetch(`http://localhost:3000/message/${user.userId}/private/${userName}`, {
+        fetch(`https://messagingapp-api-n7ms.onrender.com/message/${user.userId}/private/${userName}`, {
             method: "GET",
             headers: {
                 'content-type': 'application/json',

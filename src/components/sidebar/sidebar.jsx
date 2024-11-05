@@ -10,7 +10,7 @@ function Sidebar({ user }) {
 
     useEffect(() => {
         if (selection === 'recent') {
-            fetch(`http://localhost:3000/message/recent/${user.userId}`)
+            fetch(`https://messagingapp-api-n7ms.onrender.com/message/recent/${user.userId}`)
             .then(res => res.json())
             .then(data => {
                 if (data.ok) {
@@ -26,12 +26,12 @@ function Sidebar({ user }) {
             <ul className={styles.header}>
                 <li className={selection === 'recent' ? styles.selected : undefined}>
                     <a onClick={() => setSelection('recent')} className={styles.headerSelection}>
-                        <img src="/public/recent-svgrepo-com.svg" height={35} alt="recent"/>Recent
+                        <img src="/recent-svgrepo-com.svg" height={35} alt="recent"/>Recent
                     </a>
                 </li>
                 <li className={selection === 'chats' ? styles.selected : undefined}>
                     <a onClick={() => setSelection('chats')} className={styles.headerSelection}>
-                        <img src="/public/message-square-search-svgrepo-com.svg" height={35} alt="search"/>Search
+                        <img src="/message-square-search-svgrepo-com.svg" height={35} alt="search"/>Search
                     </a>
                 </li>
             </ul>

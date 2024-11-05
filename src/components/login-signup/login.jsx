@@ -10,7 +10,7 @@ function Login({setMainContent}) {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        fetch("http://localhost:3000/login", {
+        fetch("https://messagingapp-api-n7ms.onrender.com/login", {
             method: "POST",
             headers: {'content-type': 'application/json'},
             body: JSON.stringify({

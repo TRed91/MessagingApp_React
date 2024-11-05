@@ -10,7 +10,7 @@ function MessageForm({user}) {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        fetch(`http://localhost:3000/message/${user.userId}`, {
+        fetch(`https://messagingapp-api-n7ms.onrender.com/message/${user.userId}`, {
             method: "POST",
             headers: {'content-type': 'application/json'},
             body: JSON.stringify({

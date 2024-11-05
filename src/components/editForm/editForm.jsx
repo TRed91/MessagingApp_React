@@ -10,7 +10,7 @@ function EditForm ({ user }) {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        fetch(`http://localhost:3000/user/${user.userId}`, {
+        fetch(`https://messagingapp-api-n7ms.onrender.com/user/${user.userId}`, {
             method: "PUT",
             headers: {
                 'content-type': 'application/json',

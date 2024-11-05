@@ -11,7 +11,7 @@ function App() {
 
   useEffect(() => {
       if (!user) {
-          fetch("http://localhost:3000/login", {
+          fetch("https://messagingapp-api-n7ms.onrender.com/login", {
               method: "GET",
               headers: {
                   'Authorization': `Bearer ${localStorage.getItem('token')}`,
@@ -55,21 +55,21 @@ function App() {
                         <a href="https://github.com/TRed91/"
                            className={'footer-link'}
                            target={'_blank'}>
-                            <img src="/public/github-142-svgrepo-com.svg" height={18} alt="github link"/> GitHub
+                            <img src="/github-142-svgrepo-com.svg" height={18} alt="github link"/> GitHub
                         </a>
                     </li>
                     <li>
                         <a href="https://www.linkedin.com/in/thomas-roth-90b91531b/"
                            className={'footer-link'}
                            target={'_blank'}>
-                            <img src="/public/linkedin-svgrepo-com.svg" height={18} alt="linkedin link"/> LinkedIn
+                            <img src="/linkedin-svgrepo-com.svg" height={18} alt="linkedin link"/> LinkedIn
                         </a>
                     </li>
                     <li>
                         <a href="mailto:thomas.roth@aon.at"
                            className={'footer-link'}
                            target={'_blank'}>
-                            <img src="/public/mail-svgrepo-com.svg" height={18} alt="email"/> thomas.roth@aon.at
+                            <img src="/mail-svgrepo-com.svg" height={18} alt="email"/> thomas.roth@aon.at
                         </a>
                     </li>
                 </ul>
