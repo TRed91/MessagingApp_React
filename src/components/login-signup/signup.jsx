@@ -80,7 +80,6 @@ function Signup({ setMainContent }) {
 }
 
 Signup.propTypes = {
-    setMainContent: PropTypes.func.isRequired,
-}
+    setMainContent: PropTypes.func}
 
 export default Signup;

@@ -59,7 +59,7 @@ function Login({setMainContent}) {
 }
 
 Login.propTypes = {
-    setMainContent: PropTypes.func.isRequired
+    setMainContent: PropTypes.func
 }
 
 export default Login;

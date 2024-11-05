@@ -24,7 +24,7 @@ MessageCard.propTypes = {
             userId: PropTypes.number,
         }),
         messageText: PropTypes.string,
-        timestamp: PropTypes.number
+        timestamp: PropTypes.any
     })
 }
 

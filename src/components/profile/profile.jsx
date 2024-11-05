@@ -35,7 +35,7 @@ Profile.propTypes = {
         about: PropTypes.string,
         userId: PropTypes.number,
     }),
-    setMainContent: PropTypes.func.isRequired,
+    setMainContent: PropTypes.func,
 }
 
 export default Profile;

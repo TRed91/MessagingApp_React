@@ -6,6 +6,7 @@ function MessageForm({user}) {
     const [ receiver , setReceiver ] = useState("");
     const [ message, setMessage ] = useState("");
     const [ result, setResult] = useState("");
+    const [ success, setSuccess ] = useState(false);
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -20,10 +21,13 @@ function MessageForm({user}) {
             .then(res => res.json())
             .then(data => {
                 if (data.ok) {
-                    console.log(data);
+                    setSuccess(data.ok);
                     setResult(`Message sent to ${receiver}`);
                     setReceiver('');
                     setMessage('');
+                } else {
+                    setSuccess(data.ok);
+                    setResult(data.message);
                 }
             })
             .catch(err => console.log(err));
@@ -45,7 +49,7 @@ function MessageForm({user}) {
                 </textarea>
                 <button>Send</button>
             </form>
-            <p className={styles.result}>
+            <p className={success ? styles.result : styles.fail}>
                 {result}
             </p>
         </div>

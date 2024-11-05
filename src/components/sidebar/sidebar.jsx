@@ -25,10 +25,14 @@ function Sidebar({ user }) {
         <div className={styles.sidebarContainer}>
             <ul className={styles.header}>
                 <li className={selection === 'recent' ? styles.selected : undefined}>
-                    <a onClick={() => setSelection('recent')}>Recent</a>
+                    <a onClick={() => setSelection('recent')} className={styles.headerSelection}>
+                        <img src="/public/recent-svgrepo-com.svg" height={35} alt="recent"/>Recent
+                    </a>
                 </li>
                 <li className={selection === 'chats' ? styles.selected : undefined}>
-                    <a onClick={() => setSelection('chats')}>Search</a>
+                    <a onClick={() => setSelection('chats')} className={styles.headerSelection}>
+                        <img src="/public/message-square-search-svgrepo-com.svg" height={35} alt="search"/>Search
+                    </a>
                 </li>
             </ul>
             {selection === 'recent' ?

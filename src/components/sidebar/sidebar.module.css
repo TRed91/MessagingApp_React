@@ -23,10 +23,10 @@
 .header {
     padding: 1rem;
     display: flex;
-    gap: 2rem;
     font-size: 1.3rem;
     justify-content: space-around;
     list-style: none;
+    width: 100%;
 }
 
 .selected {
@@ -43,4 +43,10 @@
     flex-direction: column;
     align-items: center;
     width: 80%;
+}
+
+.headerSelection {
+    display: flex;
+    align-items: center;
+    color: black;
 }
