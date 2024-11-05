@@ -30,7 +30,7 @@ function App() {
           })
           .catch(err => console.log(err));
       }
-  }, [])
+  }, [user])
 
   return (
     <main>
@@ -43,7 +43,38 @@ function App() {
         <div className={'main'}>
             {mainContent}
         </div>
-        
+        <div className={'footer'}>
+            <div>
+                <p className={'me'}>developed by Thomas Roth</p>
+                <p>may the git push force be with you</p>
+            </div>
+            <div>
+                <p>More about me: </p>
+                <ul className={'footer-link-container'}>
+                    <li>
+                        <a href="https://github.com/TRed91/"
+                           className={'footer-link'}
+                           target={'_blank'}>
+                            <img src="/public/github-142-svgrepo-com.svg" height={18} alt="github link"/> GitHub
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.linkedin.com/in/thomas-roth-90b91531b/"
+                           className={'footer-link'}
+                           target={'_blank'}>
+                            <img src="/public/linkedin-svgrepo-com.svg" height={18} alt="linkedin link"/> LinkedIn
+                        </a>
+                    </li>
+                    <li>
+                        <a href="mailto:thomas.roth@aon.at"
+                           className={'footer-link'}
+                           target={'_blank'}>
+                            <img src="/public/mail-svgrepo-com.svg" height={18} alt="email"/> thomas.roth@aon.at
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
     </main>
   )
 }

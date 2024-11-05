@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import styles from './sidebar.module.css'
 import RecentMessages from "./sidebarPartials/recentMessages.jsx";
 import UserSelect from "./sidebarPartials/userSelect.jsx";
+import PropTypes from "prop-types";
 
 function Sidebar({ user }) {
     const [ selection, setSelection ] = useState('recent');
@@ -18,7 +19,7 @@ function Sidebar({ user }) {
             })
             .catch(err => console.log(err.message))
         }
-    }, [])
+    }, [selection, user.userId]);
 
     return (
         <div className={styles.sidebarContainer}>
@@ -27,7 +28,7 @@ function Sidebar({ user }) {
                     <a onClick={() => setSelection('recent')}>Recent</a>
                 </li>
                 <li className={selection === 'chats' ? styles.selected : undefined}>
-                    <a onClick={() => setSelection('chats')}>Chats</a>
+                    <a onClick={() => setSelection('chats')}>Search</a>
                 </li>
             </ul>
             {selection === 'recent' ?
@@ -35,6 +36,15 @@ function Sidebar({ user }) {
                 <UserSelect user={user}/>}
         </div>
     )
+}
+
+Sidebar.propTypes = {
+    user: PropTypes.shape({
+        userName: PropTypes.string,
+        email: PropTypes.string,
+        about: PropTypes.string,
+        userId: PropTypes.number,
+    })
 }
 
 export default Sidebar;

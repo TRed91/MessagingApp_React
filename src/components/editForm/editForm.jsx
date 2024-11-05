@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import styles from './editForm.module.css';
+import PropTypes from "prop-types";
 
 function EditForm ({ user }) {
     const [ username , setUsername ] = useState(user.userName);
@@ -49,7 +50,7 @@ function EditForm ({ user }) {
                 </div>
                 <div className={styles.aboutElement}>
                     <label htmlFor="about">About Me:</label>
-                    <textarea type="about" id="about" name="about"
+                    <textarea id="about" name="about"
                            className={styles.textarea}
                            value={about}
                            onChange={(e) => setAbout(e.target.value)}>
@@ -60,6 +61,15 @@ function EditForm ({ user }) {
             <p>{result}</p>
         </div>
     )
+}
+
+EditForm.propTypes = {
+    user: {
+        userName: PropTypes.string,
+        email: PropTypes.string,
+        about: PropTypes.string,
+        userId: PropTypes.number,
+    }
 }
 
 export default EditForm;

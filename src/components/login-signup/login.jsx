@@ -1,6 +1,7 @@
 import {useState} from "react";
 import styles from './authform.module.css';
 import Signup from "./signup.jsx";
+import PropTypes from "prop-types";
 
 function Login({setMainContent}) {
     const [ username , setUsername ] = useState("");
@@ -55,6 +56,10 @@ function Login({setMainContent}) {
             </p>
         </div>
     )
+}
+
+Login.propTypes = {
+    setMainContent: PropTypes.func.isRequired
 }
 
 export default Login;

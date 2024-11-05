@@ -2,12 +2,14 @@ import RecentMessages from "./recentMessages.jsx";
 import styles from '../sidebar.module.css'
 import {useState} from "react";
 
+// eslint-disable-next-line react/prop-types
 function UserSelect ({ user }) {
     const [ userName, setUserName ] = useState("");
     const [ messages, setMessages ] = useState([]);
     const [ errMsg, setErrMsg ] = useState("");
 
-    const handleSearch = (e) => {
+    const handleSearch = () => {
+        // eslint-disable-next-line react/prop-types
         fetch(`http://localhost:3000/message/${user.userId}/private/${userName}`, {
             method: "GET",
             headers: {
@@ -31,9 +33,9 @@ function UserSelect ({ user }) {
             <div className={styles.searchBarContainer}>
                 <input type='search'
                        value={userName}
-                       placeholder="Search..."
+                       placeholder="Search User..."
                        onChange={e => setUserName(e.target.value)}
-                       className={styles.searchBar}/>
+                       />
                 <button type='button' onClick={handleSearch}>Search</button>
             </div>
             {Array.isArray(messages) ? <RecentMessages messages={messages} /> : null}

@@ -1,5 +1,6 @@
 import {useState} from "react";
 import styles from "./messageForm.module.css"
+import PropTypes from "prop-types";
 
 function MessageForm({user}) {
     const [ receiver , setReceiver ] = useState("");
@@ -31,7 +32,7 @@ function MessageForm({user}) {
     return (
         <div className={styles.formContainer}>
             <form onSubmit={handleSubmit} className={styles.form}>
-                <div className={styles.formElement}>
+                <div>
                     <label htmlFor="receiver">Send to: </label>
                     <input type="text" id="receiver" name="receiver" placeholder="Username"
                            value={receiver}
@@ -49,6 +50,15 @@ function MessageForm({user}) {
             </p>
         </div>
     )
+}
+
+MessageForm.propTypes = {
+    user: PropTypes.shape({
+        userName: PropTypes.string,
+        email: PropTypes.string,
+        about: PropTypes.string,
+        userId: PropTypes.number,
+    })
 }
 
 export default MessageForm;

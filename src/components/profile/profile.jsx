@@ -1,5 +1,6 @@
 import styles from './profile.module.css'
 import EditForm from '../editForm/editForm.jsx';
+import PropTypes from "prop-types";
 
 function Profile({ user, setMainContent }) {
 
@@ -25,6 +26,16 @@ function Profile({ user, setMainContent }) {
             </button>
         </div>
     )
+}
+
+Profile.propTypes = {
+    user: PropTypes.shape({
+        userName: PropTypes.string,
+        email: PropTypes.string,
+        about: PropTypes.string,
+        userId: PropTypes.number,
+    }),
+    setMainContent: PropTypes.func.isRequired,
 }
 
 export default Profile;
